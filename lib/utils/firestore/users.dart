@@ -30,6 +30,7 @@ class UserFirestore {
   static Future<dynamic> getUser(String uid) async{
     try {
       DocumentSnapshot documentSnapshot = await users.doc(uid).get();
+      print(documentSnapshot);
       Map<String, dynamic> data = documentSnapshot.data() as Map<String, dynamic>;
       Account myAccount = Account(
         id: uid,

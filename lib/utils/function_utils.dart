@@ -5,17 +5,17 @@ import 'package:image_picker/image_picker.dart';
 
 class FunctionUtils {
   static Future<dynamic> getImageFromGallery() async {
-    ImagePicker picker = ImagePicker();
+    final ImagePicker picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     return pickedFile;
-    // if (pickedFile != null) { //もしpickedFileがnullじゃなければ、imageにpickedFileのパスを代入
-    //   setState(() {
-    //     image = File(pickedFile.path);
-    //   });
-    // }
+    //if (pickedFile != null) { //もしpickedFileがnullじゃなければ、imageにpickedFileのパスを代入
+    //  setState(() {
+     //   image = File(pickedFile.path);
+    //  });
+    //}
   }
 
-  static Future<String> uploadImage(String uid, File image) async {
+  static Future<dynamic> uploadImage(String uid, File image) async {
     final FirebaseStorage storageInstance = FirebaseStorage.instance;
     final Reference ref = storageInstance.ref();
     await ref.child(uid).putFile(image);

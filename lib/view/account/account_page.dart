@@ -133,7 +133,8 @@ class _AccountPageState extends State<AccountPage> {
                                                     Row(
                                                       children: [
                                                         Text(myAccount.name, style: TextStyle(fontWeight: FontWeight.bold),),
-                                                        Text(myAccount.userId, style: TextStyle(color: Colors.grey),),
+                                                        SizedBox(width: 10),
+                                                        Text('@' + myAccount.userId, style: TextStyle(color: Colors.grey),),
                                                       ],
                                                     ),
                                                     Text(DateFormat(' M/d/yy').format(post.createdTime!.toDate())) //toDateでDate型に変換
